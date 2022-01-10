@@ -1,6 +1,9 @@
-/readme.md
+# whitelist
+!.gitignore
+!/img/*
 
-# IMG
+# blacklist
+# img
 *.jpg
 *.jpeg
 *.gif
