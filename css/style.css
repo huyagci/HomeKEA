@@ -1,0 +1,13 @@
+/* about > faq > accordion */
+
+body {
+    background-color: #E9ECEF;
+}
+
+.featurette-heading {
+    font-weight: bold;
+}
+
+.featurette-heading > span {
+    font-weight: 300;
+}
