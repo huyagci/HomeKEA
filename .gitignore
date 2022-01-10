@@ -1,9 +1,8 @@
 # whitelist
 !.gitignore
-!/img/*
 
 # blacklist
-# img
+# images
 *.jpg
 *.jpeg
 *.gif
