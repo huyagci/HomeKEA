@@ -25,7 +25,7 @@ jobs:
         DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
         DOCKERHUB_IMAGE: ${{secrets.DOCKERHUB_IMAGENAME}}
       run: |
-        docker build . --file Dockerfile --tag $DOCKERHUB_USERNAME/$DOCKERHUB_IMAGENAME:latest
+        docker build . --file Dockerfile --tag $DOCKERHUB_USERNAME/$DOCKERHUB_IMAGENAME
       
     - name: Docker Push
       env:
