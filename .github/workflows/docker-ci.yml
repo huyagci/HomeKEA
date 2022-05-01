@@ -17,19 +17,12 @@ jobs:
     - name: Docker Login
       env: 
         DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+        DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
       run: |
-        echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username $DOCKERHUB_USERNAME --password-stdin
+        docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
       
     - name: Docker Build
-      env:
-        DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
-        DOCKERHUB_IMAGE: ${{secrets.DOCKERHUB_IMAGENAME}}
-      run: |
-        docker build . --file Dockerfile --tag $DOCKERHUB_USERNAME/$DOCKERHUB_IMAGENAME
+      run: docker build . -f Dockerfile -t huyagci/homekea:latest
       
     - name: Docker Push
-      env:
-        DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
-        DOCKERHUB_IMAGE: ${{secrets.DOCKERHUB_IMAGENAME}}
-      run: |
-        docker push $DOCKERHUB_USERNAME/$DOCKERHUB_IMAGENAME
+      run: docker push huyagci/homekea
